@@ -1,5 +1,6 @@
 package com.junda.springbootmall.controller;
 
+import com.junda.springbootmall.constant.ProductCategory;
 import com.junda.springbootmall.dto.ProductRequest;
 import com.junda.springbootmall.model.Product;
 import com.junda.springbootmall.service.ProductService;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.StringTokenizer;
 
 @RestController
 public class ProductController {
@@ -19,8 +21,11 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts(){
-        List<Product> productList = productService.getProducts();
+    public ResponseEntity<List<Product>> getProducts(
+            @RequestParam(required = false) ProductCategory category,
+            @RequestParam(required = false) String  search
+    ){
+        List<Product> productList = productService.getProducts(category, search);
 
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
