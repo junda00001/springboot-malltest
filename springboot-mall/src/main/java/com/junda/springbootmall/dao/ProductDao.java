@@ -2,9 +2,13 @@ package com.junda.springbootmall.dao;
 
 import com.junda.springbootmall.dto.ProductRequest;
 import com.junda.springbootmall.model.Product;
+
+import java.util.List;
 //import org.springframework.web.util.pattern.PathPattern;
 
 public interface ProductDao {
+
+    List<Product> getProducts();
 
     Product getProductById(Integer productId);
 
