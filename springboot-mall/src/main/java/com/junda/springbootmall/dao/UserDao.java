@@ -1,0 +1,11 @@
+package com.junda.springbootmall.dao;
+
+import com.junda.springbootmall.dto.UserRegisterRequest;
+import com.junda.springbootmall.model.User;
+
+public interface UserDao {
+
+    User getUserById (Integer userId);
+
+    Integer createUser(UserRegisterRequest userRegisterRequest);
+}
