@@ -1,6 +1,5 @@
 package com.junda.springbootmall.dao.impl;
 
-import com.junda.springbootmall.constant.ProductCategory;
 import com.junda.springbootmall.dao.ProductDao;
 import com.junda.springbootmall.dto.ProductQueryParams;
 import com.junda.springbootmall.dto.ProductRequest;
@@ -9,19 +8,17 @@ import com.junda.springbootmall.rowmapper.ProductRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.object.SqlUpdate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 
-import javax.swing.plaf.basic.BasicTreeUI;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Component
-public class ProductDaompl implements ProductDao {
+public class ProductDaoImpl implements ProductDao {
 
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
